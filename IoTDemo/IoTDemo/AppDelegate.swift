@@ -19,9 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        self.dataService = DataService(completionClosure: {
-            print("Data Loaded")
-        })
         self.window = UIWindow(frame: UIScreen.main.bounds)
         navigationController = UINavigationController(rootViewController: MainView())
         self.window?.rootViewController = navigationController

@@ -5,7 +5,6 @@ class MainView: UIViewController {
 
     var headerView: UIView!
     var backendSelector: UIView!
-    var currentBackend: Backend?
     
     private func createHeader(title: String) -> UIView {
         let result = UILabel()
@@ -17,7 +16,7 @@ class MainView: UIViewController {
     
     private func createBackendSelector() -> UIView {
         let button = UIButton(type: .system)
-        button.setTitle(currentBackend?.description ?? "<select backend>", for: .normal)
+        button.setTitle("<select backend>", for: .normal)
         button.addTarget(self, action: #selector(MainView.switchToBackendSelection(_:)), for: .touchUpInside)
         return button
     }
@@ -26,7 +25,7 @@ class MainView: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .white
         self.title = "IoT Demo App"
-        headerView = createHeader(title: currentBackend?.host ?? "<select backend>")
+        headerView = createHeader(title: "<select backend>")
         self.view.addSubview(headerView)
         headerView.snp.makeConstraints {(make) -> Void in
             make.top.equalToSuperview().offset(80)

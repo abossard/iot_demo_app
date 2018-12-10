@@ -1,18 +1,17 @@
 import Foundation
-import CoreData
+import Foundation
+
+
+// Dog model
 
 class DataService: NSObject {
-    
-    //var managedObjectContext: NSManagedObjectContext
-    
     init(completionClosure: @escaping()->()) {
-        let persistentContainer = NSPersistentContainer(name: "DataModel")
-        persistentContainer.loadPersistentStores { (description, error) in
-            if let error = error {
-                fatalError("Failed to load Core Data Stack: \(error)")
-            }
-            //self.managedObjectContext = persistentContainer.viewContext
-            completionClosure()
-        }
+        completionClosure()
+    }
+    
+    func addBackend(host: String, port: Int) {
+    }
+
+    func listBackends() ->Void {
     }
 }
