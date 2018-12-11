@@ -7,16 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		650EBD4721BE848100B6CA40 /* BackendSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650EBD4621BE848100B6CA40 /* BackendSelection.swift */; };
-		650EBD4821BE848100B6CA40 /* BackendSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650EBD4621BE848100B6CA40 /* BackendSelection.swift */; };
-		650EBD4921BE848100B6CA40 /* BackendSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650EBD4621BE848100B6CA40 /* BackendSelection.swift */; };
-		650EBD5021BE9FDA00B6CA40 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650EBD4F21BE9FDA00B6CA40 /* DataService.swift */; };
-		650EBD5121BE9FDA00B6CA40 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650EBD4F21BE9FDA00B6CA40 /* DataService.swift */; };
-		650EBD5221BE9FDA00B6CA40 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650EBD4F21BE9FDA00B6CA40 /* DataService.swift */; };
-		65EBFDAB21BE6BA900661347 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EBFDAA21BE6BA900661347 /* AppDelegate.swift */; };
-		65EBFDAD21BE6BA900661347 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EBFDAC21BE6BA900661347 /* MainView.swift */; };
-		65EBFDB521BE6BAA00661347 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65EBFDB421BE6BAA00661347 /* Assets.xcassets */; };
-		65EBFDB821BE6BAA00661347 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65EBFDB621BE6BAA00661347 /* LaunchScreen.storyboard */; };
+		58A6E0AB5769B60F1747FC03 /* BackendSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A6EC4F7580C9B477BB7B55 /* BackendSelectionView.swift */; };
+		58A6E298F04B3D6B38857738 /* BackendSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A6EC4F7580C9B477BB7B55 /* BackendSelectionView.swift */; };
+		58A6E3FFBA3DC86AE3CCA5B7 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A6E2D4BF6CAFF2DA3FB631 /* Model.swift */; };
+		58A6E690774F4A6F15BB46C7 /* BackendSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A6EC4F7580C9B477BB7B55 /* BackendSelectionView.swift */; };
+		58A6E81493978038DBD5EB14 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A6E654DF7174EDFC527491 /* MainView.swift */; };
+		58A6EDDBFCC1B4372ABCAC36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58A6E09FF79D3EB8415129E3 /* LaunchScreen.storyboard */; };
+		58A6EF8FBCFDF6AF1D88D8EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A6EAB608AD2A52A9EC622E /* AppDelegate.swift */; };
+		58A6EFF97BF049A46F3726EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58A6E7DE0D55021AA8C2F657 /* Assets.xcassets */; };
 		65EBFDC321BE6BAA00661347 /* IoTDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EBFDC221BE6BAA00661347 /* IoTDemoTests.swift */; };
 		65EBFDCE21BE6BAA00661347 /* IoTDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EBFDCD21BE6BAA00661347 /* IoTDemoUITests.swift */; };
 		CBE86232B38677E8A1F579D5 /* Pods_IoTDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B1861E79BF342F8DC2DB14A /* Pods_IoTDemo.framework */; };
@@ -41,15 +39,15 @@
 
 /* Begin PBXFileReference section */
 		3510DA710780F1AA33ECC9A0 /* Pods-IoTDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IoTDemo.release.xcconfig"; path = "../Pods/Target Support Files/Pods-IoTDemo/Pods-IoTDemo.release.xcconfig"; sourceTree = "<group>"; };
+		58A6E09FF79D3EB8415129E3 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		58A6E2D4BF6CAFF2DA3FB631 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		58A6E654DF7174EDFC527491 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		58A6E7DE0D55021AA8C2F657 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		58A6EAB608AD2A52A9EC622E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		58A6EB308FA27D84026C465F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		58A6EC4F7580C9B477BB7B55 /* BackendSelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackendSelectionView.swift; sourceTree = "<group>"; };
 		6325A6BC522A686B6A83CCFC /* Pods-IoTDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IoTDemo.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-IoTDemo/Pods-IoTDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		650EBD4621BE848100B6CA40 /* BackendSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendSelection.swift; sourceTree = "<group>"; };
-		650EBD4F21BE9FDA00B6CA40 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		65EBFDA721BE6BA900661347 /* IoTDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IoTDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		65EBFDAA21BE6BA900661347 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		65EBFDAC21BE6BA900661347 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		65EBFDB421BE6BAA00661347 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		65EBFDB721BE6BAA00661347 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		65EBFDB921BE6BAA00661347 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65EBFDBE21BE6BAA00661347 /* IoTDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IoTDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		65EBFDC221BE6BAA00661347 /* IoTDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IoTDemoTests.swift; sourceTree = "<group>"; };
 		65EBFDC421BE6BAA00661347 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -85,6 +83,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		58A6E0EDE825CCCEFA376E56 /* Concepts */ = {
+			isa = PBXGroup;
+			children = (
+				58A6EF236614951F2F4A0E1F /* BackendSelection */,
+				58A6E9A303CD29C4CB672367 /* Main */,
+			);
+			path = Concepts;
+			sourceTree = "<group>";
+		};
+		58A6E51CD1CE5058C6264288 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		58A6E6CED3A1C1FF11FEE371 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				58A6E7DE0D55021AA8C2F657 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		58A6E9A303CD29C4CB672367 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				58A6E654DF7174EDFC527491 /* MainView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		58A6EEAF3860F9181683254F /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				58A6E09FF79D3EB8415129E3 /* LaunchScreen.storyboard */,
+				58A6EB308FA27D84026C465F /* Info.plist */,
+				58A6EAB608AD2A52A9EC622E /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		58A6EF236614951F2F4A0E1F /* BackendSelection */ = {
+			isa = PBXGroup;
+			children = (
+				58A6EC4F7580C9B477BB7B55 /* BackendSelectionView.swift */,
+				58A6E2D4BF6CAFF2DA3FB631 /* Model.swift */,
+			);
+			path = BackendSelection;
+			sourceTree = "<group>";
+		};
 		650EBD4021BE797F00B6CA40 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,13 +167,10 @@
 		65EBFDA921BE6BA900661347 /* IoTDemo */ = {
 			isa = PBXGroup;
 			children = (
-				65EBFDAA21BE6BA900661347 /* AppDelegate.swift */,
-				65EBFDAC21BE6BA900661347 /* MainView.swift */,
-				65EBFDB421BE6BAA00661347 /* Assets.xcassets */,
-				65EBFDB621BE6BAA00661347 /* LaunchScreen.storyboard */,
-				65EBFDB921BE6BAA00661347 /* Info.plist */,
-				650EBD4621BE848100B6CA40 /* BackendSelection.swift */,
-				650EBD4F21BE9FDA00B6CA40 /* DataService.swift */,
+				58A6E6CED3A1C1FF11FEE371 /* Assets */,
+				58A6E0EDE825CCCEFA376E56 /* Concepts */,
+				58A6E51CD1CE5058C6264288 /* Services */,
+				58A6EEAF3860F9181683254F /* Application */,
 			);
 			path = IoTDemo;
 			sourceTree = "<group>";
@@ -262,8 +308,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65EBFDB821BE6BAA00661347 /* LaunchScreen.storyboard in Resources */,
-				65EBFDB521BE6BAA00661347 /* Assets.xcassets in Resources */,
+				58A6EFF97BF049A46F3726EA /* Assets.xcassets in Resources */,
+				58A6EDDBFCC1B4372ABCAC36 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,7 +336,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/../Pods/Target Support Files/Pods-IoTDemo/Pods-IoTDemo-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-IoTDemo/Pods-IoTDemo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
@@ -303,7 +349,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-IoTDemo/Pods-IoTDemo-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IoTDemo/Pods-IoTDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		3636235DCF05C509BDD84019 /* [CP] Check Pods Manifest.lock */ = {
@@ -331,10 +377,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65EBFDAD21BE6BA900661347 /* MainView.swift in Sources */,
-				650EBD5021BE9FDA00B6CA40 /* DataService.swift in Sources */,
-				65EBFDAB21BE6BA900661347 /* AppDelegate.swift in Sources */,
-				650EBD4721BE848100B6CA40 /* BackendSelection.swift in Sources */,
+				58A6E0AB5769B60F1747FC03 /* BackendSelectionView.swift in Sources */,
+				58A6E81493978038DBD5EB14 /* MainView.swift in Sources */,
+				58A6EF8FBCFDF6AF1D88D8EC /* AppDelegate.swift in Sources */,
+				58A6E3FFBA3DC86AE3CCA5B7 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,8 +389,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65EBFDC321BE6BAA00661347 /* IoTDemoTests.swift in Sources */,
-				650EBD4821BE848100B6CA40 /* BackendSelection.swift in Sources */,
-				650EBD5121BE9FDA00B6CA40 /* DataService.swift in Sources */,
+				58A6E690774F4A6F15BB46C7 /* BackendSelectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,8 +398,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65EBFDCE21BE6BAA00661347 /* IoTDemoUITests.swift in Sources */,
-				650EBD4921BE848100B6CA40 /* BackendSelection.swift in Sources */,
-				650EBD5221BE9FDA00B6CA40 /* DataService.swift in Sources */,
+				58A6E298F04B3D6B38857738 /* BackendSelectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,17 +416,6 @@
 			targetProxy = 65EBFDCA21BE6BAA00661347 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		65EBFDB621BE6BAA00661347 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				65EBFDB721BE6BAA00661347 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		65EBFDD021BE6BAA00661347 /* Debug */ = {
@@ -512,8 +545,11 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
 				);
-				INFOPLIST_FILE = IoTDemo/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				INFOPLIST_FILE = "$(SRCROOT)/IoTDemo/Application/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bossdev.IoTDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -532,8 +568,11 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
 				);
-				INFOPLIST_FILE = IoTDemo/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				INFOPLIST_FILE = "$(SRCROOT)/IoTDemo/Application/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bossdev.IoTDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -553,7 +592,11 @@
 					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = IoTDemoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bossdev.IoTDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -574,7 +617,11 @@
 					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = IoTDemoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bossdev.IoTDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -594,7 +641,11 @@
 					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = IoTDemoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bossdev.IoTDemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -614,7 +665,11 @@
 					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = IoTDemoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bossdev.IoTDemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

@@ -14,7 +14,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var navigationController: UINavigationController?
-    var dataService: DataService?
 
 
     func application(_ application: UIApplication,
