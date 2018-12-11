@@ -6,11 +6,13 @@ class MainView: UIViewController, BackendViewControllerDelegate {
 
     var headerView: UILabel!
     var backendSelector: UIButton!
+    var deviceDataButton: UIButton!
 
     var deviceService: DeviceService?
     var deviceDataRealmAdapter: DeviceDataRealmAdapter?
 
     var backendViewController: BackendViewController!
+    var deviceDataViewController: DeviceDataViewController!
 
     var realm: Realm!
     //var sectionData = [Section(title: "Connection", cells: <#T##[UITableViewCell]##[UIKit.UITableViewCell]#>)]
@@ -26,6 +28,13 @@ class MainView: UIViewController, BackendViewControllerDelegate {
     private func createBackendSelector() -> UIButton {
         let button = UIButton(type: .system)
         button.setTitle("Choose a backend", for: .normal)
+        button.addTarget(self, action: #selector(MainView.switchToBackendSelection(_:)), for: .touchUpInside)
+        return button
+    }
+
+    private func createDeviceDataView() -> UIButton {
+        let button = UIButton(type: .system)
+        button.setTitle("View Device Data", for: .normal)
         button.addTarget(self, action: #selector(MainView.switchToBackendSelection(_:)), for: .touchUpInside)
         return button
     }
@@ -66,6 +75,11 @@ class MainView: UIViewController, BackendViewControllerDelegate {
         print("Button pressed")
         self.deviceService?.stop()
         self.navigationController?.pushViewController(self.backendViewController, animated: true)
+    }
+
+    @objc
+    func switchToDeviceData(_ sender: UIButton!) {
+        self.navigationController?.pushViewController(self.deviceDataViewController, animated: true)
     }
 
     func backendViewController(_ backendViewController: BackendViewController, selectConnectionString connectionString: String) {
