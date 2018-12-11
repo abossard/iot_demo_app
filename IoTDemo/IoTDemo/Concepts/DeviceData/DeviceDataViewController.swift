@@ -8,6 +8,10 @@ class DeviceDataViewController: UIViewController {
     var mapView: MKMapView!
     var realm: Realm!
 
+    var notificationToken: NotificationToken?
+
+    var objects: Results<PositionRealm>!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.realm = try! Realm(configuration: realmConfig)
@@ -18,5 +22,21 @@ class DeviceDataViewController: UIViewController {
             make.bottom.equalToSuperview()
             make.width.equalToSuperview()
         }
+        self.mapView.zoomEnabled = true
+        self.mapView.scrollEnabled = true
+
+        self.objects = realm.objects(PositionRealm).sorted(byKeyPath: "createdDate", ascending: true)
+
+        self.title = "Device Data"
+
+
+        notificationToken = realm.observe { [unowned self] note, realm in
+            print("Update")
+        }
     }
+
+    private func drawPins() {
+    }
+
+
 }

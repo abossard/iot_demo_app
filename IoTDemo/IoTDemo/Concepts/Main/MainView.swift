@@ -35,7 +35,7 @@ class MainView: UIViewController, BackendViewControllerDelegate {
     private func createDeviceDataView() -> UIButton {
         let button = UIButton(type: .system)
         button.setTitle("View Device Data", for: .normal)
-        button.addTarget(self, action: #selector(MainView.switchToBackendSelection(_:)), for: .touchUpInside)
+        button.addTarget(self, action: #selector(MainView.switchToDeviceData(_:)), for: .touchUpInside)
         return button
     }
     
@@ -45,6 +45,7 @@ class MainView: UIViewController, BackendViewControllerDelegate {
         self.view.backgroundColor = .white
         self.backendViewController = BackendViewController()
         self.backendViewController.delegate = self
+        self.deviceDataViewController = DeviceDataViewController()
         self.title = "IoT Demo App"
         headerView = createHeader(title: "<select backend>")
         self.view.addSubview(headerView)
@@ -58,6 +59,14 @@ class MainView: UIViewController, BackendViewControllerDelegate {
         self.view.addSubview(backendSelector)
         backendSelector.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(headerView.snp.bottom)
+            make.width.equalTo(self.view)
+            make.height.equalTo(50)
+        }
+
+        deviceDataButton = createDeviceDataView()
+        self.view.addSubview(deviceDataButton)
+        deviceDataButton.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(backendSelector.snp.bottom)
             make.width.equalTo(self.view)
             make.height.equalTo(50)
         }
