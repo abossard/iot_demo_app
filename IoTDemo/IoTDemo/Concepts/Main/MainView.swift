@@ -1,12 +1,20 @@
 import UIKit
 import SnapKit
 
-class MainView: UIViewController {
+//struct Section {
+//    var title:String
+//    var cells: [UITableViewCell]
+//}
 
-    var headerView: UIView!
-    var backendSelector: UIView!
-    
-    private func createHeader(title: String) -> UIView {
+class MainView: UIViewController, BackendViewControllerDelegate {
+
+    var headerView: UILabel!
+    var backendSelector: UIButton!
+
+    var backendViewController: BackendViewController!
+    //var sectionData = [Section(title: "Connection", cells: <#T##[UITableViewCell]##[UIKit.UITableViewCell]#>)]
+
+    private func createHeader(title: String) -> UILabel {
         let result = UILabel()
         result.text = title
         result.backgroundColor = .red
@@ -14,9 +22,9 @@ class MainView: UIViewController {
         return result
     }
     
-    private func createBackendSelector() -> UIView {
+    private func createBackendSelector() -> UIButton {
         let button = UIButton(type: .system)
-        button.setTitle("<select backend>", for: .normal)
+        button.setTitle("Choose a backend", for: .normal)
         button.addTarget(self, action: #selector(MainView.switchToBackendSelection(_:)), for: .touchUpInside)
         return button
     }
@@ -24,6 +32,8 @@ class MainView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
+        self.backendViewController = BackendViewController()
+        self.backendViewController.delegate = self
         self.title = "IoT Demo App"
         headerView = createHeader(title: "<select backend>")
         self.view.addSubview(headerView)
@@ -49,9 +59,11 @@ class MainView: UIViewController {
     @objc
     func switchToBackendSelection(_ sender: UIButton!) {
         print("Button pressed")
-        self.navigationController?.pushViewController(BackendViewController(), animated: true)
+        self.navigationController?.pushViewController(self.backendViewController, animated: true)
     }
-    
 
+    func backendViewController(_ backendViewController: BackendViewController, selectConnectionString: String) {
+        self.headerView.text = selectConnectionString
+    }
 }
 

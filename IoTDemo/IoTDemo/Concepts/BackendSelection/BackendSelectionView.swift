@@ -1,7 +1,11 @@
 import Foundation
 import UIKit
-import SnapKit
 import RealmSwift
+import Eureka
+
+protocol BackendViewControllerDelegate: AnyObject {
+    func backendViewController(_ backendViewController: BackendViewController, selectConnectionString: String)
+}
 
 class BackendTableViewCell: UITableViewCell {
     static let reuseIdentifier = "BackendTableViewCell"
@@ -15,12 +19,25 @@ class BackendTableViewCell: UITableViewCell {
     }
 }
 
+let config = Realm.Configuration()
 
-class BackendViewController: UITableViewController {
+class BackendViewController: UITableViewController, AddBackendViewControllerDelegate {
     var notificationToken: NotificationToken?
     var realm: Realm!
+    var addBackendViewController: AddBackendViewController
+
+    weak var delegate: BackendViewControllerDelegate?
 
     var objects: Results<BackendRealm>!
+
+    init() {
+        addBackendViewController = AddBackendViewController(style: .plain)
+        super.init(style: .plain)
+    }
+
+    required init(coder: NSCoder) {
+        fatalError("NSCoding not supported")
+    }
 
     private func createTable() -> UITableView {
         let table = UITableView()
@@ -31,16 +48,17 @@ class BackendViewController: UITableViewController {
         self.title = "Select a Backend..."
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem:.add, target: self, action: #selector(addItem(_:)))
         self.tableView.register(BackendTableViewCell.self, forCellReuseIdentifier: BackendTableViewCell.reuseIdentifier)
+        self.addBackendViewController = AddBackendViewController()
+        self.addBackendViewController.delegate = self
     }
 
     private func setupRealm() {
-        realm = try! Realm()
+        realm = try! Realm(configuration: config)
+        objects = realm.objects(BackendRealm.self).sorted(byKeyPath: "lastUsed", ascending: false)
 
         notificationToken = realm.observe { [unowned self] note, realm in
             self.tableView.reloadData()
         }
-
-        objects = realm.objects(BackendRealm.self).sorted(byKeyPath: "lastUsed", ascending: false)
     }
 
     override func viewDidLoad() {
@@ -78,12 +96,50 @@ class BackendViewController: UITableViewController {
         }
     }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let backend = objects[indexPath.row]
+        try! realm.write {
+            backend.lastUsed = Date()
+        }
+        delegate?.backendViewController(self, selectConnectionString: backend.connectionString)
+        self.navigationController?.popViewController(animated: true)
+    }
 
     @objc
     func addItem(_ sender: UIBarButtonItem) {
-        print("Add Backend")
+        self.navigationController?.pushViewController(self.addBackendViewController, animated: true)
+    }
+
+    func addBackendViewController(_ addBackendViewController: AddBackendViewController, connectionString: URL) {
         try! realm.write {
-            realm.create(BackendRealm.self, value: ["google.com \(Date())", Date()])
+            realm.create(BackendRealm.self, value: [connectionString.absoluteString, Date()], update: true)
         }
+    }
+}
+
+protocol AddBackendViewControllerDelegate: AnyObject {
+    func addBackendViewController(_ addBackendViewController: AddBackendViewController, connectionString: URL)
+}
+
+class AddBackendViewController: FormViewController {
+
+    weak var delegate: AddBackendViewControllerDelegate?
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.title = "Add Backend"
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem:.save, target: self, action: #selector(addBackend(_:)))
+
+        form +++ Section("Add connection string")
+        <<< URLRow(){
+            $0.title = "URL"
+            $0.tag = "url"
+        }
+    }
+
+    @objc func addBackend(_ sender: UIBarButtonItem) {
+        let row: URLRow? = form.rowBy(tag: "url")
+        self.delegate?.addBackendViewController(self, connectionString: row!.value!)
+        self.navigationController?.popViewController(animated: true)
     }
 }
