@@ -6,11 +6,13 @@ PODS:
   - RealmSwift (3.12.0):
     - Realm (= 3.12.0)
   - SnapKit (4.2.0)
+  - SwiftSignalRClient (0.4.1)
 
 DEPENDENCIES:
   - Eureka
   - RealmSwift
   - SnapKit (~> 4.2.0)
+  - SwiftSignalRClient
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -18,13 +20,15 @@ SPEC REPOS:
     - Realm
     - RealmSwift
     - SnapKit
+    - SwiftSignalRClient
 
 SPEC CHECKSUMS:
   Eureka: 6d711cb30ca333b4bc893110285a722ae3840114
   Realm: cdaef23c4ddb36ab1ddffed23f5a7f3332fc5585
   RealmSwift: 5576324033f0aa5ef1e0a839a3da2281dff47a7f
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  SwiftSignalRClient: edd4e6e16c87370ca624c6868279483a2ffe4f1d
 
-PODFILE CHECKSUM: 07688630f932a3472dd85ead1aa4f11724f55bec
+PODFILE CHECKSUM: fef61164db7cc7b92f523cf8979c21e4dfa4da1f
 
 COCOAPODS: 1.6.0.beta.2

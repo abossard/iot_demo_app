@@ -1,17 +1,18 @@
 import UIKit
 import SnapKit
-
-//struct Section {
-//    var title:String
-//    var cells: [UITableViewCell]
-//}
+import RealmSwift
 
 class MainView: UIViewController, BackendViewControllerDelegate {
 
     var headerView: UILabel!
     var backendSelector: UIButton!
 
+    var deviceService: DeviceService?
+    var deviceDataRealmAdapter: DeviceDataRealmAdapter?
+
     var backendViewController: BackendViewController!
+
+    var realm: Realm!
     //var sectionData = [Section(title: "Connection", cells: <#T##[UITableViewCell]##[UIKit.UITableViewCell]#>)]
 
     private func createHeader(title: String) -> UILabel {
@@ -31,6 +32,7 @@ class MainView: UIViewController, BackendViewControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.realm = try! Realm(configuration: realmConfig)
         self.view.backgroundColor = .white
         self.backendViewController = BackendViewController()
         self.backendViewController.delegate = self
@@ -50,6 +52,9 @@ class MainView: UIViewController, BackendViewControllerDelegate {
             make.width.equalTo(self.view)
             make.height.equalTo(50)
         }
+
+        self.deviceDataRealmAdapter = DeviceDataRealmAdapter()
+        //startDeviceServiceWithLastConnection()
     }
     
     override var shouldAutorotate: Bool {
@@ -59,11 +64,27 @@ class MainView: UIViewController, BackendViewControllerDelegate {
     @objc
     func switchToBackendSelection(_ sender: UIButton!) {
         print("Button pressed")
+        self.deviceService?.stop()
         self.navigationController?.pushViewController(self.backendViewController, animated: true)
     }
 
-    func backendViewController(_ backendViewController: BackendViewController, selectConnectionString: String) {
-        self.headerView.text = selectConnectionString
+    func backendViewController(_ backendViewController: BackendViewController, selectConnectionString connectionString: String) {
+        self.headerView.text = connectionString
+        startDeviceServiceWith(connectionString: connectionString)
+    }
+
+    private func startDeviceServiceWithLastConnection() {
+        let backends = realm.objects(BackendRealm.self).sorted(byKeyPath: "lastUsed", ascending: false)
+        if(backends.count > 0) {
+            backendViewController(self.backendViewController, selectConnectionString: backends[0].connectionString)
+        }
+    }
+
+    private func startDeviceServiceWith(connectionString: String) {
+        self.deviceService?.stop()
+        self.deviceService = DeviceService(connectionString: connectionString + "/chathub")
+        self.deviceService?.start()
+        self.deviceService?.delegate = self.deviceDataRealmAdapter
     }
 }
 

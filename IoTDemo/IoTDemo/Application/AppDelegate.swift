@@ -8,6 +8,10 @@
 
 import UIKit
 import CoreData
+import RealmSwift
+
+
+let realmConfig = Realm.Configuration()
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

@@ -19,8 +19,6 @@ class BackendTableViewCell: UITableViewCell {
     }
 }
 
-let config = Realm.Configuration()
-
 class BackendViewController: UITableViewController, AddBackendViewControllerDelegate {
     var notificationToken: NotificationToken?
     var realm: Realm!
@@ -53,7 +51,7 @@ class BackendViewController: UITableViewController, AddBackendViewControllerDele
     }
 
     private func setupRealm() {
-        realm = try! Realm(configuration: config)
+        realm = try! Realm(configuration: realmConfig)
         objects = realm.objects(BackendRealm.self).sorted(byKeyPath: "lastUsed", ascending: false)
 
         notificationToken = realm.observe { [unowned self] note, realm in
