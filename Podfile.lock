@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (4.8.0)
   - Eureka (4.3.0)
   - Realm (3.12.0):
     - Realm/Headers (= 3.12.0)
@@ -9,6 +10,7 @@ PODS:
   - SwiftSignalRClient (0.4.1)
 
 DEPENDENCIES:
+  - Alamofire (~> 4.7)
   - Eureka
   - RealmSwift
   - SnapKit (~> 4.2.0)
@@ -16,6 +18,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Alamofire
     - Eureka
     - Realm
     - RealmSwift
@@ -23,12 +26,13 @@ SPEC REPOS:
     - SwiftSignalRClient
 
 SPEC CHECKSUMS:
+  Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
   Eureka: 6d711cb30ca333b4bc893110285a722ae3840114
   Realm: cdaef23c4ddb36ab1ddffed23f5a7f3332fc5585
   RealmSwift: 5576324033f0aa5ef1e0a839a3da2281dff47a7f
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SwiftSignalRClient: edd4e6e16c87370ca624c6868279483a2ffe4f1d
 
-PODFILE CHECKSUM: fef61164db7cc7b92f523cf8979c21e4dfa4da1f
+PODFILE CHECKSUM: 0dbe4403af7d3917119173b990a6b43a3c6b6c53
 
 COCOAPODS: 1.6.0.beta.2

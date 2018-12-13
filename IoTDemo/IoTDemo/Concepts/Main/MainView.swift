@@ -9,6 +9,8 @@ class MainView: UIViewController, BackendViewControllerDelegate {
     var deviceDataButton: UIButton!
 
     var deviceService: DeviceService?
+    var historyService: HistoryService?
+    var historyDataRealmAdapter: HistoryDataRealmAdapter?
     var deviceDataRealmAdapter: DeviceDataRealmAdapter?
 
     var backendViewController: BackendViewController!
@@ -72,7 +74,10 @@ class MainView: UIViewController, BackendViewControllerDelegate {
         }
 
         self.deviceDataRealmAdapter = DeviceDataRealmAdapter()
+        self.historyDataRealmAdapter = HistoryDataRealmAdapter()
+
         //startDeviceServiceWithLastConnection()
+        requestHistoryData()
     }
     
     override var shouldAutorotate: Bool {
@@ -94,13 +99,33 @@ class MainView: UIViewController, BackendViewControllerDelegate {
     func backendViewController(_ backendViewController: BackendViewController, selectConnectionString connectionString: String) {
         self.headerView.text = connectionString
         startDeviceServiceWith(connectionString: connectionString)
+        requestHistoryDataWith(connectionString: connectionString)
+    }
+
+    private func getLastConnectionString() -> String? {
+        let backends = realm.objects(BackendRealm.self).sorted(byKeyPath: "lastUsed", ascending: false)
+        if(backends.count > 0) {
+            return backends[0].connectionString
+        }
+        return nil
     }
 
     private func startDeviceServiceWithLastConnection() {
-        let backends = realm.objects(BackendRealm.self).sorted(byKeyPath: "lastUsed", ascending: false)
-        if(backends.count > 0) {
-            backendViewController(self.backendViewController, selectConnectionString: backends[0].connectionString)
+        if let connectionString = getLastConnectionString() {
+            backendViewController(self.backendViewController, selectConnectionString: connectionString)
         }
+    }
+
+    private func requestHistoryData() {
+        if let connectionString = getLastConnectionString() {
+            requestHistoryDataWith(connectionString: connectionString)
+        }
+    }
+
+    private func requestHistoryDataWith(connectionString: String) {
+        self.historyService = HistoryService(connectionString: connectionString + "/api/history")
+        self.historyService?.delegate = self.historyDataRealmAdapter
+        self.historyService?.request()
     }
 
     private func startDeviceServiceWith(connectionString: String) {

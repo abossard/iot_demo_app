@@ -29,6 +29,10 @@ class DeviceService: HubConnectionDelegate {
         self.decoder = JSONDecoder()
     }
 
+    func requestHistory() {
+
+    }
+
     func start() {
 
         chatHubConnection = HubConnectionBuilder(url: self.url)
@@ -59,10 +63,10 @@ class DeviceService: HubConnectionDelegate {
     }
 
     func connectionDidFailToOpen(error: Error) {
-        print("C FAIL \(error)")
+        print("C FAIL \(error.localizedDescription)")
     }
 
     func connectionDidClose(error: Error?) {
-        print("C FAIL 2 \(error)")
+        print("C FAIL 2 \(error.debugDescription)")
     }
 }
