@@ -66,6 +66,7 @@ class DeviceDataViewController: UIViewController, MKMapViewDelegate {
                 let deviceAnnotationView = DevicePositionAnnotationView(annotation: annotation, reuseIdentifier: DevicePositionAnnotation.Identifier)
                 deviceAnnotationView.markerTintColor = .orange
                 deviceAnnotationView.titleVisibility = .visible
+                deviceAnnotationView.displayPriority = .required
                 return deviceAnnotationView
             }
         }
