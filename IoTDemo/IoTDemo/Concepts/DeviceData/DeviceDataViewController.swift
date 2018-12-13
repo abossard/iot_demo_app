@@ -39,8 +39,9 @@ class DeviceDataViewController: UIViewController, MKMapViewDelegate {
     }
 
     private func drawPins() {
+        print("draw pins")
         let newPositions = (lastDrawnPosition != nil ? positions.filter("dateEdgets > %@", lastDrawnPosition!) : positions)
-        for position in (newPositions    ?? positions).suffix(from: 20) {
+        for position in (newPositions    ?? positions) {
             lastDrawnPosition = position.dateEdgets
             let annotation = DevicePositionAnnotation()
             annotation.coordinate = CLLocationCoordinate2D(latitude: position.latitude, longitude: position.longitude)
@@ -64,6 +65,7 @@ class DeviceDataViewController: UIViewController, MKMapViewDelegate {
                 print("New")
                 let deviceAnnotationView = DevicePositionAnnotationView(annotation: annotation, reuseIdentifier: DevicePositionAnnotation.Identifier)
                 deviceAnnotationView.markerTintColor = .orange
+                deviceAnnotationView.titleVisibility = .visible
                 return deviceAnnotationView
             }
         }
