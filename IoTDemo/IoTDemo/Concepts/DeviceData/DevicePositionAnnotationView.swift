@@ -1,6 +1,6 @@
 import Foundation
 import MapKit
 
-class DevicePositionAnnotationView: MKPinAnnotationView {
+class DevicePositionAnnotationView: MKMarkerAnnotationView {
 
 }

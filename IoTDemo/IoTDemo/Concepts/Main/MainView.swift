@@ -77,7 +77,7 @@ class MainView: UIViewController, BackendViewControllerDelegate {
         self.historyDataRealmAdapter = HistoryDataRealmAdapter()
 
         //startDeviceServiceWithLastConnection()
-        requestHistoryData()
+        //requestHistoryData()
     }
     
     override var shouldAutorotate: Bool {

@@ -10,7 +10,7 @@ class DeviceDataViewController: UIViewController, MKMapViewDelegate {
 
     var notificationToken: NotificationToken?
 
-    var positions: Results<PositionRealm>!
+    var positions: Results<GeoMessageRealm>!
     var lastDrawnPosition: Date?
 
     override func viewDidLoad() {
@@ -27,7 +27,7 @@ class DeviceDataViewController: UIViewController, MKMapViewDelegate {
         self.mapView.isZoomEnabled = true
         self.mapView.isScrollEnabled = true
 
-        self.positions = realm.objects(PositionRealm.self).sorted(byKeyPath: "createdDate", ascending: true)
+        self.positions = realm.objects(GeoMessageRealm.self).sorted(byKeyPath: "dateEdgets", ascending: true)
 
         self.title = "Device Data"
 
@@ -39,15 +39,16 @@ class DeviceDataViewController: UIViewController, MKMapViewDelegate {
     }
 
     private func drawPins() {
-        let newPositions = (lastDrawnPosition != nil ? positions.filter("createdDate > %@", lastDrawnPosition!) : positions)
-        for position in newPositions ?? positions {
-            lastDrawnPosition = position.createdDate
+        let newPositions = (lastDrawnPosition != nil ? positions.filter("dateEdgets > %@", lastDrawnPosition!) : positions)
+        for position in (newPositions    ?? positions).suffix(from: 20) {
+            lastDrawnPosition = position.dateEdgets
             let annotation = DevicePositionAnnotation()
             annotation.coordinate = CLLocationCoordinate2D(latitude: position.latitude, longitude: position.longitude)
-            annotation.title = "\(position.source): \(position.user)"
-            annotation.subtitle = "\(position.createdDate)"
+            annotation.title = "\(position.source)"
+            annotation.subtitle = "\(position.dateEdgets)"
             mapView.addAnnotation(annotation)
         }
+        self.mapView.showAnnotations(self.mapView.annotations, animated: true)
 
     }
 
@@ -57,9 +58,13 @@ class DeviceDataViewController: UIViewController, MKMapViewDelegate {
         }
         if annotation as? DevicePositionAnnotation != nil {
             if let deviceAnnotationView = mapView.dequeueReusableAnnotationView(withIdentifier: DevicePositionAnnotation.Identifier) as? DevicePositionAnnotationView {
+                print("Reuse")
                 deviceAnnotationView.annotation = annotation
             } else {
-                return DevicePositionAnnotationView(annotation: annotation, reuseIdentifier: DevicePositionAnnotation.Identifier)
+                print("New")
+                let deviceAnnotationView = DevicePositionAnnotationView(annotation: annotation, reuseIdentifier: DevicePositionAnnotation.Identifier)
+                deviceAnnotationView.markerTintColor = .orange
+                return deviceAnnotationView
             }
         }
         return nil
