@@ -21,11 +21,19 @@ class GeoData: Decodable {
     let deviceType: Int
     let lat: Double
     let lng: Double
+    let precision: Double?
+}
+
+class DistanceData: Decodable {
+    let distance: Int
+    let battery: Int
+    let charging: Bool
 }
 
 enum HistoryData: Decodable {
     case waterMessage(WaterData)
     case geoMessage(GeoData)
+    case distanceMessage(DistanceData)
     case baseMessage(BaseData)
 
     init(from decoder: Decoder) throws {
@@ -36,6 +44,12 @@ enum HistoryData: Decodable {
         } catch DecodingError.keyNotFound {
             do {
                 self = .geoMessage(try container.decode(GeoData.self))
+            } catch DecodingError.keyNotFound {
+                do {
+                    self = .distanceMessage(try container.decode(DistanceData.self))
+                } catch DecodingError.keyNotFound {
+                    print("Resort to base")
+                }
             }
         }
     }
@@ -48,6 +62,7 @@ protocol HistoryServiceDelegate: AnyObject {
 class HistoryMessage: Decodable {
     let data: HistoryData
     let edgets: Int64
+    let eui: String
 }
 
 class HistoryService {

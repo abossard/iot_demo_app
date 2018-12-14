@@ -14,7 +14,7 @@ class MainView: UIViewController, BackendViewControllerDelegate {
     var deviceDataRealmAdapter: DeviceDataRealmAdapter?
 
     var backendViewController: BackendViewController!
-    var deviceDataViewController: DeviceDataViewController!
+    var deviceDataViewController: DataMapViewController!
 
     var realm: Realm!
     //var sectionData = [Section(title: "Connection", cells: <#T##[UITableViewCell]##[UIKit.UITableViewCell]#>)]
@@ -47,7 +47,7 @@ class MainView: UIViewController, BackendViewControllerDelegate {
         self.view.backgroundColor = .white
         self.backendViewController = BackendViewController()
         self.backendViewController.delegate = self
-        self.deviceDataViewController = DeviceDataViewController()
+        self.deviceDataViewController = DataMapViewController()
         self.title = "IoT Demo App"
         headerView = createHeader(title: "<select backend>")
         self.view.addSubview(headerView)
@@ -98,7 +98,7 @@ class MainView: UIViewController, BackendViewControllerDelegate {
 
     func backendViewController(_ backendViewController: BackendViewController, selectConnectionString connectionString: String) {
         self.headerView.text = connectionString
-        startDeviceServiceWith(connectionString: connectionString)
+        //startDeviceServiceWith(connectionString: connectionString)
         requestHistoryDataWith(connectionString: connectionString)
     }
 

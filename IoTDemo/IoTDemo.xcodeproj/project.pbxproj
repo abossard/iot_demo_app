@@ -8,19 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		58A6E0AB5769B60F1747FC03 /* BackendSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A6EC4F7580C9B477BB7B55 /* BackendSelectionView.swift */; };
-		58A6E2754804B596407ABA62 /* DeviceDataRealmAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A6EB2E20DB0449D9F74538 /* DeviceDataRealmAdapter.swift */; };
 		58A6E298F04B3D6B38857738 /* BackendSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A6EC4F7580C9B477BB7B55 /* BackendSelectionView.swift */; };
 		58A6E3FFBA3DC86AE3CCA5B7 /* BackendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A6E2D4BF6CAFF2DA3FB631 /* BackendModel.swift */; };
-		58A6E406A5938EE444EA2332 /* DeviceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A6E3E6905AF0795436A8E0 /* DeviceService.swift */; };
-		58A6E66E61DB85AA5A9ADBA8 /* HistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A6EC4CB66F1B23A12A8DA4 /* HistoryModel.swift */; };
-		58A6E67B99847D8E038A6836 /* DeviceDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A6EC20B35B5589794C73AD /* DeviceDataViewController.swift */; };
+		58A6E5D260A2E4AFB4A135CC /* SearchedAreaOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A6E0FA650324B37EF8E31E /* SearchedAreaOverlay.swift */; };
+		58A6E67B99847D8E038A6836 /* DataMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A6EC20B35B5589794C73AD /* DataMapViewController.swift */; };
 		58A6E690774F4A6F15BB46C7 /* BackendSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A6EC4F7580C9B477BB7B55 /* BackendSelectionView.swift */; };
-		58A6E692F497E6A7F0FED8FC /* HistoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A6E3221D4E240E5825501D /* HistoryService.swift */; };
+		58A6E75DD5F93C423E7D78A3 /* HistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A6EBED28EA5908E07CAFA0 /* HistoryModel.swift */; };
 		58A6E81493978038DBD5EB14 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A6E654DF7174EDFC527491 /* MainView.swift */; };
-		58A6E9EFC53D0442D92E09D3 /* HistoryDataRealmAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A6E570DCD4442068B242EB /* HistoryDataRealmAdapter.swift */; };
-		58A6EABA846730AD69434064 /* DevicePositionAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A6E51FDF5F4D2520F814BC /* DevicePositionAnnotation.swift */; };
-		58A6EDB9B7E3093C68D9E790 /* DevicePositionAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A6E2F7C72E3E80BA49D0C9 /* DevicePositionAnnotationView.swift */; };
+		58A6EABA846730AD69434064 /* DataMapPositionAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A6E51FDF5F4D2520F814BC /* DataMapPositionAnnotation.swift */; };
+		58A6EACE783C5C7689A64EA1 /* HistoryDataRealmAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A6E0CA0CFF0328D96BD217 /* HistoryDataRealmAdapter.swift */; };
+		58A6ECA96F8A21A7B96399F6 /* DeviceDataRealmAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A6EF2C4E04B753750BF283 /* DeviceDataRealmAdapter.swift */; };
+		58A6ECD114372B7E0BB41AC9 /* HistoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A6EB966ED6077124B8391B /* HistoryService.swift */; };
+		58A6EDB9B7E3093C68D9E790 /* DataMapPositionAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A6E2F7C72E3E80BA49D0C9 /* DataMapPositionAnnotationView.swift */; };
 		58A6EDDBFCC1B4372ABCAC36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58A6E09FF79D3EB8415129E3 /* LaunchScreen.storyboard */; };
+		58A6EE5CFEAF028A811640ED /* ColorChooser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A6E5C67E038B0089EB6E77 /* ColorChooser.swift */; };
+		58A6EEE291F7B929771E210A /* DeviceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A6EDC926DEFFC8BAA96B76 /* DeviceService.swift */; };
 		58A6EF8FBCFDF6AF1D88D8EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A6EAB608AD2A52A9EC622E /* AppDelegate.swift */; };
 		58A6EFDCA04E78C8A9FFEC65 /* PositionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A6EDAB0EF87275BB372F5D /* PositionModel.swift */; };
 		58A6EFF97BF049A46F3726EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58A6E7DE0D55021AA8C2F657 /* Assets.xcassets */; };
@@ -49,21 +51,23 @@
 /* Begin PBXFileReference section */
 		3510DA710780F1AA33ECC9A0 /* Pods-IoTDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IoTDemo.release.xcconfig"; path = "../Pods/Target Support Files/Pods-IoTDemo/Pods-IoTDemo.release.xcconfig"; sourceTree = "<group>"; };
 		58A6E09FF79D3EB8415129E3 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		58A6E0CA0CFF0328D96BD217 /* HistoryDataRealmAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryDataRealmAdapter.swift; sourceTree = "<group>"; };
+		58A6E0FA650324B37EF8E31E /* SearchedAreaOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchedAreaOverlay.swift; sourceTree = "<group>"; };
 		58A6E2D4BF6CAFF2DA3FB631 /* BackendModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackendModel.swift; sourceTree = "<group>"; };
-		58A6E2F7C72E3E80BA49D0C9 /* DevicePositionAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevicePositionAnnotationView.swift; sourceTree = "<group>"; };
-		58A6E3221D4E240E5825501D /* HistoryService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryService.swift; sourceTree = "<group>"; };
-		58A6E3E6905AF0795436A8E0 /* DeviceService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceService.swift; sourceTree = "<group>"; };
-		58A6E51FDF5F4D2520F814BC /* DevicePositionAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevicePositionAnnotation.swift; sourceTree = "<group>"; };
-		58A6E570DCD4442068B242EB /* HistoryDataRealmAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryDataRealmAdapter.swift; sourceTree = "<group>"; };
+		58A6E2F7C72E3E80BA49D0C9 /* DataMapPositionAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataMapPositionAnnotationView.swift; sourceTree = "<group>"; };
+		58A6E51FDF5F4D2520F814BC /* DataMapPositionAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataMapPositionAnnotation.swift; sourceTree = "<group>"; };
+		58A6E5C67E038B0089EB6E77 /* ColorChooser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorChooser.swift; sourceTree = "<group>"; };
 		58A6E654DF7174EDFC527491 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		58A6E7DE0D55021AA8C2F657 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58A6EAB608AD2A52A9EC622E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		58A6EB2E20DB0449D9F74538 /* DeviceDataRealmAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceDataRealmAdapter.swift; sourceTree = "<group>"; };
 		58A6EB308FA27D84026C465F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
-		58A6EC20B35B5589794C73AD /* DeviceDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceDataViewController.swift; sourceTree = "<group>"; };
-		58A6EC4CB66F1B23A12A8DA4 /* HistoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryModel.swift; sourceTree = "<group>"; };
+		58A6EB966ED6077124B8391B /* HistoryService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryService.swift; sourceTree = "<group>"; };
+		58A6EBED28EA5908E07CAFA0 /* HistoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryModel.swift; sourceTree = "<group>"; };
+		58A6EC20B35B5589794C73AD /* DataMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataMapViewController.swift; sourceTree = "<group>"; };
 		58A6EC4F7580C9B477BB7B55 /* BackendSelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackendSelectionView.swift; sourceTree = "<group>"; };
 		58A6EDAB0EF87275BB372F5D /* PositionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PositionModel.swift; sourceTree = "<group>"; };
+		58A6EDC926DEFFC8BAA96B76 /* DeviceService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceService.swift; sourceTree = "<group>"; };
+		58A6EF2C4E04B753750BF283 /* DeviceDataRealmAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceDataRealmAdapter.swift; sourceTree = "<group>"; };
 		6325A6BC522A686B6A83CCFC /* Pods-IoTDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IoTDemo.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-IoTDemo/Pods-IoTDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		65EBFDA721BE6BA900661347 /* IoTDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IoTDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65EBFDBE21BE6BAA00661347 /* IoTDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IoTDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,30 +110,29 @@
 			children = (
 				58A6EF236614951F2F4A0E1F /* BackendSelection */,
 				58A6E9A303CD29C4CB672367 /* Main */,
-				58A6E308C88D72093ACCB674 /* DeviceData */,
+				58A6E308C88D72093ACCB674 /* DataMap */,
 			);
 			path = Concepts;
 			sourceTree = "<group>";
 		};
-		58A6E308C88D72093ACCB674 /* DeviceData */ = {
+		58A6E308C88D72093ACCB674 /* DataMap */ = {
 			isa = PBXGroup;
 			children = (
-				58A6EC20B35B5589794C73AD /* DeviceDataViewController.swift */,
-				58A6E51FDF5F4D2520F814BC /* DevicePositionAnnotation.swift */,
-				58A6E2F7C72E3E80BA49D0C9 /* DevicePositionAnnotationView.swift */,
+				58A6EC20B35B5589794C73AD /* DataMapViewController.swift */,
+				58A6E51FDF5F4D2520F814BC /* DataMapPositionAnnotation.swift */,
+				58A6E2F7C72E3E80BA49D0C9 /* DataMapPositionAnnotationView.swift */,
+				58A6E5C67E038B0089EB6E77 /* ColorChooser.swift */,
+				58A6E0FA650324B37EF8E31E /* SearchedAreaOverlay.swift */,
 			);
-			path = DeviceData;
+			path = DataMap;
 			sourceTree = "<group>";
 		};
 		58A6E51CD1CE5058C6264288 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				58A6E3E6905AF0795436A8E0 /* DeviceService.swift */,
 				58A6EDAB0EF87275BB372F5D /* PositionModel.swift */,
-				58A6EB2E20DB0449D9F74538 /* DeviceDataRealmAdapter.swift */,
-				58A6E3221D4E240E5825501D /* HistoryService.swift */,
-				58A6EC4CB66F1B23A12A8DA4 /* HistoryModel.swift */,
-				58A6E570DCD4442068B242EB /* HistoryDataRealmAdapter.swift */,
+				58A6E9AB0597F8CF96802D20 /* Live */,
+				58A6E6F25AEA9EF90B01E1B2 /* History */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -142,12 +145,31 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
+		58A6E6F25AEA9EF90B01E1B2 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				58A6EB966ED6077124B8391B /* HistoryService.swift */,
+				58A6E0CA0CFF0328D96BD217 /* HistoryDataRealmAdapter.swift */,
+				58A6EBED28EA5908E07CAFA0 /* HistoryModel.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
 		58A6E9A303CD29C4CB672367 /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				58A6E654DF7174EDFC527491 /* MainView.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		58A6E9AB0597F8CF96802D20 /* Live */ = {
+			isa = PBXGroup;
+			children = (
+				58A6EF2C4E04B753750BF283 /* DeviceDataRealmAdapter.swift */,
+				58A6EDC926DEFFC8BAA96B76 /* DeviceService.swift */,
+			);
+			path = Live;
 			sourceTree = "<group>";
 		};
 		58A6EEAF3860F9181683254F /* Application */ = {
@@ -422,15 +444,17 @@
 				58A6E81493978038DBD5EB14 /* MainView.swift in Sources */,
 				58A6EF8FBCFDF6AF1D88D8EC /* AppDelegate.swift in Sources */,
 				58A6E3FFBA3DC86AE3CCA5B7 /* BackendModel.swift in Sources */,
-				58A6E406A5938EE444EA2332 /* DeviceService.swift in Sources */,
-				58A6E67B99847D8E038A6836 /* DeviceDataViewController.swift in Sources */,
+				58A6E67B99847D8E038A6836 /* DataMapViewController.swift in Sources */,
 				58A6EFDCA04E78C8A9FFEC65 /* PositionModel.swift in Sources */,
-				58A6E2754804B596407ABA62 /* DeviceDataRealmAdapter.swift in Sources */,
-				58A6EABA846730AD69434064 /* DevicePositionAnnotation.swift in Sources */,
-				58A6EDB9B7E3093C68D9E790 /* DevicePositionAnnotationView.swift in Sources */,
-				58A6E692F497E6A7F0FED8FC /* HistoryService.swift in Sources */,
-				58A6E66E61DB85AA5A9ADBA8 /* HistoryModel.swift in Sources */,
-				58A6E9EFC53D0442D92E09D3 /* HistoryDataRealmAdapter.swift in Sources */,
+				58A6EABA846730AD69434064 /* DataMapPositionAnnotation.swift in Sources */,
+				58A6EDB9B7E3093C68D9E790 /* DataMapPositionAnnotationView.swift in Sources */,
+				58A6ECA96F8A21A7B96399F6 /* DeviceDataRealmAdapter.swift in Sources */,
+				58A6EEE291F7B929771E210A /* DeviceService.swift in Sources */,
+				58A6ECD114372B7E0BB41AC9 /* HistoryService.swift in Sources */,
+				58A6EACE783C5C7689A64EA1 /* HistoryDataRealmAdapter.swift in Sources */,
+				58A6E75DD5F93C423E7D78A3 /* HistoryModel.swift in Sources */,
+				58A6EE5CFEAF028A811640ED /* ColorChooser.swift in Sources */,
+				58A6E5D260A2E4AFB4A135CC /* SearchedAreaOverlay.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
