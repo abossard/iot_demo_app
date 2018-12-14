@@ -98,7 +98,7 @@ class MainView: UIViewController, BackendViewControllerDelegate {
 
     func backendViewController(_ backendViewController: BackendViewController, selectConnectionString connectionString: String) {
         self.headerView.text = connectionString
-        //startDeviceServiceWith(connectionString: connectionString)
+        startDeviceServiceWith(connectionString: connectionString)
         requestHistoryDataWith(connectionString: connectionString)
     }
 

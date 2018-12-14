@@ -11,7 +11,7 @@ class DataMapViewController: UIViewController, MKMapViewDelegate {
     var realm: Realm!
 
     var notificationToken: NotificationToken?
-    var radius = 30.0
+    var radius:Float = 30.0
     var radiusSlider: UISlider!
     var positions: Results<GeoMessageRealm>!
     var lastDrawnPosition: Date?
@@ -42,6 +42,7 @@ class DataMapViewController: UIViewController, MKMapViewDelegate {
         }
         self.radiusSlider.minimumValue = 1
         self.radiusSlider.maximumValue = 100
+        self.radiusSlider.setValue(self.radius, animated: false)
         self.radiusSlider.addTarget(self, action: #selector(resizeSearchAreas), for: .valueChanged)
 
         self.positions = realm.objects(GeoMessageRealm.self).sorted(byKeyPath: "dateEdgets", ascending: true)
@@ -56,11 +57,11 @@ class DataMapViewController: UIViewController, MKMapViewDelegate {
 
     @objc
     func resizeSearchAreas(sender: UISlider, forEvent event: UIEvent) {
-        self.radius = Double(self.radiusSlider.value)
+        self.radius = self.radiusSlider.value
         for overlay in mapView.overlays {
             if let searchAreaOverlay = overlay as? SearchedAreaOverlay {
                 mapView.removeOverlay(overlay)
-                let newOverlay = SearchedAreaOverlay(color: searchAreaOverlay.color ?? .black, center: searchAreaOverlay.coordinate, radius: self.radius)
+                let newOverlay = SearchedAreaOverlay(color: searchAreaOverlay.color ?? .black, center: searchAreaOverlay.coordinate, radius: Double(self.radius))
                 mapView.addOverlay(newOverlay)
             }
         }
@@ -85,7 +86,7 @@ class DataMapViewController: UIViewController, MKMapViewDelegate {
             let searchedArea = SearchedAreaOverlay(
                     color: annotation.color ?? .black,
                     center: annotation.coordinate,
-                    radius: self.radius
+                    radius: Double(self.radius)
             )
             mapView.addOverlay(searchedArea)
         }
